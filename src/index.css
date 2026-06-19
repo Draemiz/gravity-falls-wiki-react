@@ -57,14 +57,53 @@ body{
 
 .overlay button{
   background:#2f4f3e;
-
   border:2px solid #d4af37;
-
   color:white;
-
   padding:15px 30px;
-
   border-radius:10px;
-
   cursor:pointer;
+}
+
+.personajes{
+  background:#08140f;
+  padding:80px 40px;
+  text-align:center;
+}
+
+.personajes h2{
+  font-family:"RegularJoe";
+  font-size:3.5rem;
+  color:#c19040;
+  margin-bottom:10px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+}
+
+.personajes h2{
+  font-family:"RegularJoe";
+  font-size:3.5rem;
+  color:#f5e6c8;
+  margin:0;
+}
+
+.personajes p{
+  color:#d8c8a0;
+  font-size:1.1rem;
+  margin-bottom:60px;
+}
+
+.titulo-seccion{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  margin-bottom:15px;
+}
+
+.titulo-seccion img{
+  width:100px;
+  height:auto;
 }
