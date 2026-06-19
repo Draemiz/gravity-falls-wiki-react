@@ -4,11 +4,18 @@
   box-sizing:border-box;
 }
 
+@font-face {
+  font-family: "RegularJoe";
+  src: url("./assets/RegularJoe.ttf")
+    format("truetype");
+}
+
 body{
   background:#08140f;
   color:white;
   font-family:Arial, Helvetica, sans-serif;
 }
+
 
 .hero{
   height:100vh;
@@ -31,9 +38,14 @@ body{
 }
 
 .overlay h1{
-  font-size:4rem;
+  font-family: "RegularJoe";
+  font-size: 5rem;
   color:#f5e6c8;
   margin-bottom:20px;
+  letter-spacing:2px;
+
+  text-shadow:
+    3px 3px 8px rgba(0,0,0,0.7);
 }
 
 .overlay p{
