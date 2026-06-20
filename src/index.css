@@ -25,6 +25,7 @@ body {
   background-position: center;
   display: flex;
   align-items: center;
+  animation:fadeHero 1.2s ease;
 }
 
 .overlay {
@@ -39,6 +40,7 @@ body {
   color: #bf9755;
   margin-bottom: 20px;
   letter-spacing: 2px;
+  animation:tituloEntrada 1s ease-out;
 
   text-shadow:
     3px 3px 8px rgba(0, 0, 0, 0.7);
@@ -49,6 +51,7 @@ body {
   line-height: 1.6;
   max-width: 500px;
   margin-bottom: 30px;
+  animation:textoEntrada 1.3s ease-out;
 }
 
 .overlay button {
@@ -65,6 +68,7 @@ body {
 .btn-explorar{
     display:inline-block;
     text-decoration:none;
+    animation:botonEntrada 1.6s ease;
 
     padding:15px 30px;
 
@@ -146,10 +150,13 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  animation:cardEntrada 0.8s ease;
+  transition:all 0.4s ease;
 }
 
 .card-personaje:hover {
   transform: translateY(-8px);
+  transform:translateY(-10px) scale(1.03);
 }
 
 /* FOTO */
@@ -188,11 +195,14 @@ body {
   position: relative;
   width: 1200px;
   margin: 40px auto;
+  animation: aparecerFondo 0.8s ease;
 }
 
 .fondo-libro {
   width: 100%;
   display: block;
+  position:relative;
+z-index:1;
 }
 
 .contenido-libro {
@@ -204,6 +214,9 @@ body {
   height: 100%;
 
   display: flex;
+  animation: aparecerFondo 0.8s ease;
+  position:absolute;
+z-index:2;
 }
 
 /* PAGINA IZQUIERDA */
@@ -290,4 +303,97 @@ body {
 .btn-volver:hover{
     background:#2d7a5b;
     transform:translateY(-2px);
+}
+
+/* TRANCICIONES */
+
+@keyframes fadeHero{
+    from{
+        opacity:0;
+        transform:scale(1.05);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes tituloEntrada{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes textoEntrada{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes botonEntrada{
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes cardEntrada{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes abrirLibro{
+    from{
+        opacity:0;
+        transform:scale(0.92);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.fondo-libro{
+    animation:abrirLibro 0.6s ease-out;
+}
+@keyframes aparecerContenido{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.contenido-libro{
+    animation:aparecerContenido 1s ease;
 }
