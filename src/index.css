@@ -20,15 +20,10 @@ body {
 
 .hero {
   height: 100vh;
-
   background-image: url("./assets/hero.jpg");
-
   background-size: cover;
-
   background-position: center;
-
   display: flex;
-
   align-items: center;
 }
 
@@ -87,8 +82,8 @@ body {
 .personajes h2 {
   font-family: "RegularJoe";
   font-size: 3.5rem;
-  color: ##bf9755;
-  margin: 0;
+  color: #bf9755;
+  margin: 10px;
 }
 
 .personajes p {
@@ -114,9 +109,9 @@ body {
 
 .contenedor-personajes{
   display:flex;
-  justify-content:center;
-  gap:20px;
   flex-wrap:wrap;
+  justify-content:center;
+  gap:40px;
 }
 
 /* TARJETA */
