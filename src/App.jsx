@@ -269,6 +269,7 @@ function App() {
 
             <PersonajeCard
               key={personaje.id}
+              id={personaje.id}
               nombre={personaje.nombre}
               imagen={personaje.imagen}
               frase={personaje.frase}

@@ -1,4 +1,12 @@
-function PersonajeCard({ nombre, imagen }) {
+import { Link } from "react-router-dom";
+
+function PersonajeCard({
+  id,
+  nombre,
+  imagen,
+  frase,
+  episodio
+}) {
   return (
     <article className="card-personaje">
 
@@ -10,9 +18,11 @@ function PersonajeCard({ nombre, imagen }) {
 
       <h3>{nombre}</h3>
 
-      <button>
-        Ver Expediente
-      </button>
+      <Link to={`/personaje/${id}`}>
+        <button>
+          Ver Expediente
+        </button>
+      </Link>
 
     </article>
   );
