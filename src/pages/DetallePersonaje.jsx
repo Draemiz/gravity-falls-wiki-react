@@ -1,38 +1,12 @@
 import libro from "../assets/libro.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { personajesData } from "../data/personajes";
 
 function DetallePersonaje() {
-    const personaje = {
-        nombre: "Dipper Pines",
-        imagen:
-            "https://i.pinimg.com/736x/61/dd/08/61dd0881c0b7ca8d41589d230852c043.jpg",
+    const { id } = useParams();
+    const personaje = personajesData.find(p => p.id === Number(id));
+    if (!personaje) { return <h1>Personaje no encontrado</h1>; }
 
-        edad: 12,
-        rol: "Aventurero",
-        ubicacion: "Gravity Falls, Oregon",
-
-        descripcion:
-            "Dipper es un chico inteligente y curioso que pasa el verano en Gravity Falls junto a su hermana gemela Mabel. Siempre busca resolver misterios y descubrir la verdad detrás de los fenómenos extraños del pueblo.",
-
-        notas: [
-            "Muy curioso",
-            "Confía en Mabel",
-            "Ama los misterios"
-        ],
-
-        habilidades: [
-            "Curioso",
-            "Valiente",
-            "Inteligente",
-            "Leal"
-        ],
-
-        favoritos: [
-            "Resolver misterios",
-            "Leer",
-            "Aventuras"
-        ]
-    };
 
     return (
         <div className="detalle-libro">
@@ -47,11 +21,13 @@ function DetallePersonaje() {
 
                 <div className="pagina-izquierda">
 
-                    <img
-                        src={personaje.imagen}
-                        alt={personaje.nombre}
-                        className="foto-detalle"
-                    />
+                    <div className="contenedor-foto">
+                        <img
+                            src={personaje.imagen}
+                            alt={personaje.nombre}
+                            className="foto-detalle"
+                        />
+                    </div>
 
                     <div className="notas">
 
@@ -64,6 +40,20 @@ function DetallePersonaje() {
                                 </li>
                             ))}
                         </ul>
+
+                        <br></br>
+
+                        <h3>Episodio</h3>
+                        <p className="episodio">
+                            {personaje.episodio}
+                        </p>
+
+                        <br></br>
+
+                        <h3>Frase</h3>
+                        <p className="frase">
+                            {personaje.frase}
+                        </p>
 
                     </div>
 
